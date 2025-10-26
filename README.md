@@ -52,12 +52,16 @@ Data Structure
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 The dataset will include the following variables:
 
-Variable	          Description
--------------------------------------------------------------------
-Date	              The exact date of the record
-Steps Count	        Number of steps taken
-Workout Duration	  Duration of exercise in minutes
-Workout Type	      Type of exercise (e.g., cardio, strength, yoga)
-Calories Burned	    Estimated calories burned during the day
-Sleep Duration	    Total hours of sleep
-Sleep Quality	      Rating of sleep quality
+Date: The exact date of the record
+
+Steps Count: Number of steps taken
+
+Workout Duration: Duration of exercise in minutes
+
+Workout Type: Type of exercise (e.g., cardio, strength, yoga)
+
+Calories Burned: Estimated calories burned during the day
+
+Sleep Duration: Total hours of sleep
+
+Sleep Quality: Rating of sleep quality
