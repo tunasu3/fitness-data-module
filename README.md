@@ -73,11 +73,11 @@ Sleep Quality: Rating of sleep quality
 
 Data Analysis / Methodology
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-This project follows the full data science workflow, from data collection to modeling. The methodological framework includes the following phases:
-
+This project follows the complete data science workflow, from data collection to modeling. The methodological steps are structured as follows:
+----------------------------------------------------------------
 1. Data Collection
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Daily fitness data will be collected manually and through digital tracking tools, including:
+----------------------------------------------------------------
+Daily fitness data will be gathered through manual tracking and digital tools, including:
 
 -Wearable device (steps, calories, heart rate)
 
@@ -85,125 +85,132 @@ Daily fitness data will be collected manually and through digital tracking tools
 
 -Sleep tracking application (sleep duration and sleep quality)
 
-Each day is recorded as one row in an Excel dataset with the variables:
-Date, Workout Duration, Workout Type, Calories Burned, Sleep Duration, Sleep Quality.
+Each day is represented as one row in an Excel file containing:
+
+Date, Workout Duration, Workout Type, Calories Burned, Sleep Duration, Sleep Quality
 
 2. Data Cleaning & Preprocessing
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Before analysis, the dataset will be cleaned to ensure accuracy and consistency:
+----------------------------------------------------------------
+Before performing analysis, the dataset will be prepared through the following steps:
 
--Converting date column to proper datetime format
+ -Convert the Date column to proper datetime format
 
--Handling missing values (removal or imputation depending on frequency)
+ -Handle missing values (removal or imputation)
 
--Standardizing numeric variables
+ -Standardize or normalize numeric variables if necessary
 
--Encoding categorical attributes (e.g., Workout Type, Sleep Quality)
+ -Encode categorical attributes (Workout Type, Sleep Quality)
 
--Creating additional variables such as weekday, week number, and Workout Day (True/False)
+ -Create additional features such as:
 
--Detecting outliers to understand unusual activity patterns
+     -weekday
+
+     -week number
+
+     -Workout Day (True/False based on workout duration)
+
+ -Detect and examine outliers (unusually high/low values)
 
 3. Exploratory Data Analysis (EDA)
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-The goal of EDA is to understand patterns, trends, and initial insights. Planned analyses include:
+----------------------------------------------------------------
+The goal of EDA is to identify initial trends, variability, and patterns within the data.
 
 Descriptive Statistics
+----------------------------------------------------------------
+ -Mean, median, standard deviation of all numeric variables
 
--Mean, median, standard deviation of all numeric variables
+ -Daily, weekly, and monthly summaries
 
--Daily, weekly, and monthly summaries
+Time-Series Analysis
+----------------------------------------------------------------
+ -Sleep duration variations across weeks
 
--Time-Series Exploration
-
--Sleep duration variations across weeks
-
--Calories burned vs. workout days
+ -Calories burned on workout vs. non-workout days
 
 Relationship Analysis
+----------------------------------------------------------------
+ -Correlation matrix for numerical features
 
-Correlation matrix for numerical variables
+ -Scatter plots to examine relationships such as:
 
-Scatter plots to examine relationships:
-
-Sleep Duration vs Calories Burned
+     -Sleep Duration vs. Calories Burned
 
 Visualization Tools
+----------------------------------------------------------------
+Visualizations will be generated using matplotlib and pandas, including:
 
-All visualizations will be generated using matplotlib and pandas:
+ -Line charts (trends over time)
 
-Line charts (time-series trends)
+ -Scatter plots (pairwise feature relationships)
 
-Scatter plots (pairwise relationships)
+ -Bar charts (weekly or categorical comparisons)
 
-Bar charts (weekly or categorical comparisons)
-
-Heatmaps (correlation matrix)
+ -Heatmaps (correlation matrix)
 
 4. Hypothesis Testing
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-To validate findings statistically, the following tests will be conducted:
+----------------------------------------------------------------
+To support findings with statistical evidence, the following hypotheses will be tested:
 
-H1: Longer sleep duration is associated with higher calories burned.
+H1:
 
-Method: Pearson correlation, significance testing
+Longer sleep duration is associated with higher calories burned.
+Method: Pearson correlation + p-value significance test
 
-H2: Steps Count differs significantly between workout days and non-workout days.
 
-Method: Two-sample t-test
+H2:
 
-H3: Sleep Duration differs between workout days and non-workout days.
+Sleep duration differs between workout and non-workout days.
+Method: Independent two-sample t-test
 
-Method: Two-sample t-test
 
-H4: Steps Count varies across different weekdays.
+These tests will confirm whether observed patterns are statistically meaningful.
 
-Method: One-way ANOVA
-
-These tests will help determine whether observed patterns are statistically meaningful.
-
-5. Machine Learning (Later Phase)
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-In the next project milestone, predictive models will be applied, including:
+5. Machine Learning (Later Stage)
+----------------------------------------------------------------
+In the next phase of the project, predictive and clustering models will be applied.
 
 Regression Models
+----------------------------------------------------------------
+Used to predict:
 
-To predict:
+ -Calories Burned
 
-Calories Burned
-
-Workout Duration
+ -Workout Duration
 
 Classification Models
+----------------------------------------------------------------
+Used to classify:
 
-To classify:
+ -Sleep Quality (Low / Medium / High)
 
-Sleep Quality (Low / Medium / High)
-
-Activity type of the day (High vs Low activity)
+ -Activity Level of the Day (High vs. Low activity)
 
 Clustering
+----------------------------------------------------------------
+Used to identify behavioral groups, such as:
 
-To identify day-level behavioral groups (e.g., high-activity / rest days).
+ -High-activity days
 
-Models will be evaluated using:
+ -Low-activity or rest days
 
-RMSE, MAE (regression)
+Evaluation Metrics
+----------------------------------------------------------------
+ -Regression:
 
-Accuracy, F1-score (classification)
+ -Classification
 
-Silhouette score (clustering)
+ -Clustering
 
 6. Visualization and Reporting
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Finally, the results will be summarized using:
+----------------------------------------------------------------
+The final report will include:
 
-Time-series charts
+ -Time-series charts
 
-Comparative plots
+ -Comparative plots
 
-Statistical tables
+ -Statistical tables
 
-Model performance metrics
+ -Machine learning performance summaries
 
-All findings will be integrated into the final report.
+***All insights, visualizations, and conclusions will be compiled into a structured final report.
