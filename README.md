@@ -89,6 +89,7 @@ Each day is represented as one row in an Excel file containing:
 
 Date, Workout Duration, Workout Type, Calories Burned, Sleep Duration, Sleep Quality
 
+
 2. Data Cleaning & Preprocessing
 ----------------------------------------------------------------
 Before performing analysis, the dataset will be prepared through the following steps:
@@ -110,6 +111,7 @@ Before performing analysis, the dataset will be prepared through the following s
      -Workout Day (True/False based on workout duration)
 
  -Detect and examine outliers (unusually high/low values)
+
 
 3. Exploratory Data Analysis (EDA)
 ----------------------------------------------------------------
@@ -146,6 +148,7 @@ Visualizations will be generated using matplotlib and pandas, including:
  -Bar charts (weekly or categorical comparisons)
 
  -Heatmaps (correlation matrix)
+ 
 
 4. Hypothesis Testing
 ----------------------------------------------------------------
@@ -164,6 +167,7 @@ H4: Calories burned differ across weekdays.
 Method: One-way ANOVA.
 
 These tests will confirm whether observed patterns are statistically meaningful.
+
 
 5. Machine Learning (Later Stage)
 ----------------------------------------------------------------
@@ -200,6 +204,7 @@ Evaluation Metrics
  -Classification
 
  -Clustering
+
 
 6. Visualization and Reporting
 ----------------------------------------------------------------
