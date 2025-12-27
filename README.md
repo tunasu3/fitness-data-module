@@ -151,17 +151,17 @@ Visualizations will be generated using matplotlib and pandas, including:
 ----------------------------------------------------------------
 To support findings with statistical evidence, the following hypotheses will be tested:
 
-H1:
+H1: Sleep duration is associated with calories burned.
+Method: Pearson correlation analysis with p-value significance testing.
 
-Longer sleep duration is associated with higher calories burned.
-Method: Pearson correlation + p-value significance test
+H2: Calories burned differ between workout days and non-workout days.
+Method: Independent two-sample t-test.
 
+H3: Sleep duration differs between workout and non-workout days.
+Method: Independent two-sample t-test.
 
-H2:
-
-Sleep duration differs between workout and non-workout days.
-Method: Independent two-sample t-test
-
+H4: Calories burned differ across weekdays.
+Method: One-way ANOVA.
 
 These tests will confirm whether observed patterns are statistically meaningful.
 
