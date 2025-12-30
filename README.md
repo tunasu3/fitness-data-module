@@ -134,7 +134,7 @@ Classification
 
 Due to the small dataset size, the classification accuracy may be misleading. Since the model was trained on a limited number of samples, the reported performance metrics should be interpreted with caution. This highlights the importance of dataset size and diversity in supervised learning tasks.
 
-To improve robustness, cross-validation can be applied to reduce evaluation bias.
+To improve robustness, 5-fold cross-validation was applied to the classification model to reduce evaluation bias and obtain a more reliable performance estimate.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Clustering
