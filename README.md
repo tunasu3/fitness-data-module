@@ -18,7 +18,7 @@ By tracking daily fitness metrics, this project aims to:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Motivation
 
-Personal fitness data is often scattered across multiple applications and devices, making holistic analysis difficult. By centralizing self-collected fitness data and applying data science techniques, this project aims to uncover meaningful trends, correlations, and behavioral patterns. Analyzing personal activity records enables a deeper understanding of daily routines and supports informed decisions toward a healthier lifestyle.
+Personal fitness data is often scattered across multiple applications and devices, making analysis difficult. By centralizing self-collected fitness data and applying data science techniques, this project aims to uncover meaningful trends, correlations, and behavioral patterns. Analyzing personal activity records enables a deeper understanding of daily routines and supports informed decisions toward a healthier lifestyle.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dataset
@@ -103,6 +103,7 @@ Method: One-way ANOVA
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Machine Learning Methods
+
 Train-Test Split
 
 The dataset was split into 80% training and 20% testing sets for supervised learning tasks.
