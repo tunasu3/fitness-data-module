@@ -3,219 +3,184 @@
 
 Overview
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-This project aims to develop a data analysis and visualization module for fitness tracking.
-The goal is to collect personal fitness data (such as daily steps, calories burned, workout duration, and sleep hours) and perform exploratory data analysis to uncover insights about activity patterns and health trends. Later, machine learning methods will be applied to predict or classify patterns in the data.
+This project focuses on analyzing self-collected personal fitness data to understand activity patterns, wellness trends, and relationships between physical activity, calorie expenditure, and sleep. The project follows the complete data science workflow, including data collection, exploratory data analysis (EDA), hypothesis testing, and machine learning modeling.
 
-Project Goal
+Project Goals
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
- By tracking daily fitness metrics, this project aims to:
+By tracking daily fitness metrics, this project aims to:
 
--Understand personal activity patterns
+- Understand personal activity patterns
 
--Identify factors affecting performance and wellness
+- Identify factors affecting performance and wellness
 
--Provide insights to improve fitness habits and routines
+- Provide insights to improve fitness habits and routines
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Motivation
+
+Personal fitness data is often scattered across multiple applications and devices, making holistic analysis difficult. By centralizing self-collected fitness data and applying data science techniques, this project aims to uncover meaningful trends, correlations, and behavioral patterns. Analyzing personal activity records enables a deeper understanding of daily routines and supports informed decisions toward a healthier lifestyle.
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Understanding personal fitness behavior through data offers valuable insights into daily habits, lifestyle patterns, and overall well-being. However, activity, sleep, and workout information are usually scattered across different applications or devices, making meaningful analysis challenging.
-This project aims to centralize self-collected fitness data and apply data science techniques to reveal trends, correlations, and factors that influence performance and wellness.
-By analyzing my own activity records, I aim to gain a deeper understanding of my routines, identify areas for improvement, and build the foundation for data-driven decisions that support a healthier lifestyle.
-
-Key Research Questions
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-1.How do daily and weekly patterns affect my fitness metrics?
-
-2.What is the relationship between sleep, workout duration, and calories burned?
-
-3.Can step count trends predict workout performance?
-
 Dataset
+
+The dataset is self-collected and stored in Excel format. Each row represents one day of activity.
+
+Features
+
+- Date: Date of the record
+
+- Workout Duration: Exercise duration in minutes
+
+- Workout Type: Type of workout (e.g., Cardio, Strength)
+
+- Calories Burned: Estimated calories burned per day
+
+- Sleep Duration: Total hours of sleep
+
+- Sleep Quality: Subjective sleep quality rating
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-The dataset will be self-collected starting from this week and stored in Excel. Each row will represent a day, including:
+Data Collection
 
-Date: Date of record
+Data was collected using:
 
-Steps Count: Number of steps taken
+- Wearable devices (calories burned, activity data)
 
-Workout Duration: Minutes of exercise
+- Manual workout logs (duration and type)
 
-Calories Burned: Estimated calories
+- Sleep tracking applications (sleep duration and quality)
 
-Sleep Duration: Hours slept
-
-Primary Data Collection
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-The dataset will be built using personal fitness tracking sources:
+Data Cleaning and Preprocessing
 
-1.Wearable device – daily steps, heart rate, calories burned, etc.
+The following preprocessing steps were applied:
 
-2.Workout logs – duration, type, and intensity of exercises
+- Conversion of the date column to datetime format
 
-3.Sleep tracker – hours of sleep and sleep quality
+- Verification of missing values
 
-Data Structure
+- Encoding of categorical variables (Workout Type, Sleep Quality)
+
+- Feature engineering, including:
+
+      - Workout Day (workout vs. rest day)
+
+      - Weekday information
+
+      - Activity Level (high vs. low activity)
+
+- Detection and examination of outliers
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-The dataset will include the following variables:
+Exploratory Data Analysis (EDA)
 
-Date: The exact date of the record
+EDA was conducted to identify trends and relationships in the data:
 
-Workout Duration: Duration of exercise in minutes
+- Descriptive statistics (mean, median, standard deviation)
 
-Workout Type: Type of exercise (e.g., cardio, strength, yoga)
+- Time-series analysis of workout duration, calories burned, and sleep duration
 
-Calories Burned: Estimated calories burned during the day
+- Correlation analysis among numerical variables
 
-Sleep Duration: Total hours of sleep
+- Visualizations using line plots, scatter plots, boxplots, and heatmaps
 
-Sleep Quality: Rating of sleep quality
-
-
-Data Analysis / Methodology
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-This project follows the complete data science workflow, from data collection to modeling. The methodological steps are structured as follows:
-----------------------------------------------------------------
-1. Data Collection
-----------------------------------------------------------------
-Daily fitness data will be gathered through manual tracking and digital tools, including:
+Hypothesis Testing
 
--Wearable device (steps, calories, heart rate)
+The following hypotheses were tested using statistical methods:
 
--Workout logs (duration, type, intensity)
+- H1: Sleep duration is associated with calories burned
+Method: Pearson correlation test
 
--Sleep tracking application (sleep duration and sleep quality)
+- H2: Calories burned differ between workout and non-workout days
+Method: Independent two-sample t-test
 
-Each day is represented as one row in an Excel file containing:
+- H3: Sleep duration differs between workout and non-workout days
+Method: Independent two-sample t-test
 
-Date, Workout Duration, Workout Type, Calories Burned, Sleep Duration, Sleep Quality
+- H4: Calories burned differ across weekdays
+Method: One-way ANOVA
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Machine Learning Methods
+Train-Test Split
 
-2. Data Cleaning & Preprocessing
-----------------------------------------------------------------
-Before performing analysis, the dataset will be prepared through the following steps:
+The dataset was split into 80% training and 20% testing sets for supervised learning tasks.
 
- -Convert the Date column to proper datetime format
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Regression
 
- -Handle missing values (removal or imputation)
+- Model: Linear Regression
 
- -Standardize or normalize numeric variables if necessary
+- Target Variable: Calories Burned
 
- -Encode categorical attributes (Workout Type, Sleep Quality)
+- Features: Workout Duration, Sleep Duration, Workout Day
 
- -Create additional features such as:
+- Evaluation Metrics: RMSE, R² Score
 
-     -weekday
+The regression model demonstrated that workout duration and sleep duration are strong predictors of daily calorie expenditure.
 
-     -week number
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Classification
 
-     -Workout Day (True/False based on workout duration)
+- Model: Logistic Regression
 
- -Detect and examine outliers (unusually high/low values)
+- Target Variable: Activity Level (High / Low Activity)
 
+- Features: Sleep Duration, Calories Burned
 
-3. Exploratory Data Analysis (EDA)
-----------------------------------------------------------------
-The goal of EDA is to identify initial trends, variability, and patterns within the data.
+- Evaluation Metrics: Accuracy, Precision, Recall, F1-score
 
-Descriptive Statistics
-----------------------------------------------------------------
- -Mean, median, standard deviation of all numeric variables
+Due to the small dataset size, the classification accuracy may be misleading. Since the model was trained on a limited number of samples, the reported performance metrics should be interpreted with caution. This highlights the importance of dataset size and diversity in supervised learning tasks.
 
- -Daily, weekly, and monthly summaries
+To improve robustness, cross-validation can be applied to reduce evaluation bias.
 
-Time-Series Analysis
-----------------------------------------------------------------
- -Sleep duration variations across weeks
-
- -Calories burned on workout vs. non-workout days
-
-Relationship Analysis
-----------------------------------------------------------------
- -Correlation matrix for numerical features
-
- -Scatter plots to examine relationships such as:
-
-     -Sleep Duration vs. Calories Burned
-
-Visualization Tools
-----------------------------------------------------------------
-Visualizations will be generated using matplotlib and pandas, including:
-
- -Line charts (trends over time)
-
- -Scatter plots (pairwise feature relationships)
-
- -Bar charts (weekly or categorical comparisons)
-
- -Heatmaps (correlation matrix)
- 
-
-4. Hypothesis Testing
-----------------------------------------------------------------
-To support findings with statistical evidence, the following hypotheses will be tested:
-
-H1: Sleep duration is associated with calories burned.
-Method: Pearson correlation analysis with p-value significance testing.
-
-H2: Calories burned differ between workout days and non-workout days.
-Method: Independent two-sample t-test.
-
-H3: Sleep duration differs between workout and non-workout days.
-Method: Independent two-sample t-test.
-
-H4: Calories burned differ across weekdays.
-Method: One-way ANOVA.
-
-These tests will confirm whether observed patterns are statistically meaningful.
-
-
-5. Machine Learning (Later Stage)
-----------------------------------------------------------------
-In the next phase of the project, predictive and clustering models will be applied.
-
-Regression Models
-----------------------------------------------------------------
-Used to predict:
-
- -Calories Burned
-
- -Workout Duration
-
-Classification Models
-----------------------------------------------------------------
-Used to classify:
-
- -Sleep Quality (Low / Medium / High)
-
- -Activity Level of the Day (High vs. Low activity)
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Clustering
-----------------------------------------------------------------
-Used to identify behavioral groups, such as:
 
- -High-activity days
+- Model: KMeans
 
- -Low-activity or rest days
+- Features: Workout Duration, Calories Burned, Sleep Duration
 
-Evaluation Metrics
-----------------------------------------------------------------
- -Regression:
+- Goal: Identify behavioral patterns such as high-activity and low-activity days
 
- -Classification
+Clustering analysis revealed distinct activity patterns separating workout-intensive days from low-activity or rest days.
 
- -Clustering
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Results Summary
 
+- Workout duration and sleep duration are key factors influencing calorie expenditure
 
-6. Visualization and Reporting
-----------------------------------------------------------------
-The final report will include:
+- Machine learning models successfully captured relationships in the fitness data
 
- -Time-series charts
+- Activity patterns differ clearly between high-activity and low-activity days
 
- -Comparative plots
+- Dataset size is a limiting factor for classification performance
 
- -Statistical tables
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Limitations and Future Work
 
- -Machine learning performance summaries
+- Limited dataset size
 
-***All insights, visualizations, and conclusions will be compiled into a structured final report.
+- Low variability in sleep quality labels
+
+- Future improvements may include:
+
+    - Longer data collection period
+
+    - Additional features such as heart rate and step count
+
+    - Time-series forecasting approaches
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Technologies Used
+
+- Python
+
+- Pandas, NumPy
+
+- Matplotlib, Seaborn
+
+- Scikit-learn
+
+- Jupyter Notebook / Google Colab
